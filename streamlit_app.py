@@ -4,7 +4,7 @@ import streamlit as st
 st.sidebar.title("Sidebar Navigation")
 
 # Define the CSS for styling the buttons
-button_css = """
+button_css = "
 <style>
 .stButton {
     width: 100%;
@@ -17,7 +17,7 @@ button_css = """
     margin-left: 20px;
 }
 </style>
-"""
+"
 
 st.sidebar.markdown(button_css, unsafe_allow_html=True)
 
