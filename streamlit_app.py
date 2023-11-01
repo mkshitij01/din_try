@@ -4,10 +4,10 @@ from files import Home
 
 with st.sidebar:
     sac.menu([
-        sac.MenuItem('home', icon='house-fill', Home.app()),
+        sac.MenuItem('home', icon='house-fill'),
         sac.MenuItem('products', icon='box-fill', children=[
             sac.MenuItem('apple', icon='apple', tag=sac.Tag('USA', color='green', bordered=False)),
-            sac.MenuItem('other', icon='git')
+            sac.MenuItem('other', icon='git'),
         ]),
         sac.MenuItem('disabled', icon='send', disabled=True),
         sac.MenuItem(type='divider'),
@@ -17,5 +17,5 @@ with st.sidebar:
         ]),
     ], format_func='title', open_all=True)
     
-if sac.MenuItem == 'home':
-    st.write('yay')
+if sac.menu(sac.MenuItem) == 'home':
+    Home.app()
