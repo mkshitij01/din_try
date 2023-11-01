@@ -15,20 +15,16 @@ def home_button():
     # Add your code for the Home button action here
 
 def settings_button(selected_sub_option):
-    if selected_sub_option == "Rename":
-        st.write("Rename option selected")
-        # Add your code for the Rename action here
-    elif selected_sub_option == "Save":
-        st.write("Save option selected")
-        # Add your code for the Save action here
+    st.write(f"Settings button pressed with sub-option: {selected_sub_option}")
+    # Add your code for the selected sub-option action here
 
 with st.sidebar:
     selected = option_menu("Main Menu", ["Home", 'Settings'], 
                            icons=['house', 'gear'], menu_icon="cast", default_index=1)
 
     if selected == 'Settings':
-        selected_sub_option = st.selectbox("Sub-options", ["Rename", "Save"])
-        settings_button(selected_sub_option)
+        sub_option = st.selectbox("Sub-options", ["Rename", "Save"])
+        settings_button(sub_option)
 
     if st.button("Home"):
         home_button()
