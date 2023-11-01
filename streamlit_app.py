@@ -22,4 +22,3 @@ if Item_menu == 'home':
     Home.app()
 elif Item_menu == 'apple':
     st.write('yayaya')
-    Home.app()
