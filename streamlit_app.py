@@ -18,6 +18,7 @@ with st.sidebar:
         ]),
     ], format_func='title', open_all=True)
 
+st.write(Item_Menu)
 if Item_menu == 'home':
     st.write('yay')
 if sac.menu(sac.MenuItem) == 'home':
