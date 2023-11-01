@@ -1,19 +1,20 @@
 import streamlit as st
 
-# Create the left-side navigation bar with hyperlinks
-st.sidebar.markdown('[Home](#)')
-st.sidebar.markdown('[Link1](#)')
-st.sidebar.markdown('[Link2](#)')
+# Define a custom component for the sidebar with dropdown
+def sidebar_with_dropdown():
+    st.sidebar.markdown("[Home](#)")
+    st.sidebar.markdown("[Link1](#)")
+    st.sidebar.markdown("[Link2](#)")
 
-# Create a dropdown for "Drop1" with hyperlinks
-with st.sidebar.beta_expander("Drop1"):
-    st.sidebar.markdown('[Link3](#)')
-    st.sidebar.markdown('[Link4](#)')
+    with st.sidebar.beta_expander("Drop1"):
+        st.sidebar.markdown("[Link3](#)")
+        st.sidebar.markdown("[Link4](#)")
 
-# Create "Link4" outside the dropdown
-st.sidebar.markdown('[Link4](#)')
+    st.sidebar.markdown("[Link4](#)")
 
-# Create a dropdown for "Drop2" with hyperlinks
-with st.sidebar.beta_expander("Drop2"):
-    st.sidebar.markdown('[Link5](#)')
-    st.sidebar.markdown('[Link6](#)')
+    with st.sidebar.beta_expander("Drop2"):
+        st.sidebar.markdown("[Link5](#)")
+        st.sidebar.markdown("[Link6](#)")
+
+# Use the custom component
+sidebar_with_dropdown()
