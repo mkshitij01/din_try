@@ -3,7 +3,8 @@ import streamlit_antd_components as sac
 import Home
 
 with st.sidebar:
-    sac.menu([
+    
+    Item_menu = sac.menu([
         sac.MenuItem('home', icon='house-fill'),
         sac.MenuItem('products', icon='box-fill', children=[
             sac.MenuItem('apple', icon='apple', tag=sac.Tag('USA', color='green', bordered=False)),
@@ -16,6 +17,8 @@ with st.sidebar:
             sac.MenuItem('bootstrap-icon', icon='bootstrap', href='https://icons.getbootstrap.com/'),
         ]),
     ], format_func='title', open_all=True)
-    
+
+if Item_menu == 'home':
+    st.write('yay')
 if sac.menu(sac.MenuItem) == 'home':
     Home.app()
