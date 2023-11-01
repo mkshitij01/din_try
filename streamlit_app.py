@@ -13,15 +13,15 @@ def rename_action():
 def about_action():
     st.write("You clicked on About!")
 
-# Create clickable links in the sidebar
-if st.sidebar.button("Home"):
+# Create clickable text links in the sidebar
+if st.sidebar.markdown("[Home](#)"):
     home_action()
 
-if st.sidebar.button("Settings"):
-    if st.sidebar.button("Edit"):
+if st.sidebar.markdown("[Settings](#)"):
+    if st.sidebar.markdown("&nbsp;&nbsp;&nbsp;[Edit](#)"):
         edit_action()
-    if st.sidebar.button("Rename"):
+    if st.sidebar.markdown("&nbsp;&nbsp;&nbsp;[Rename](#)"):
         rename_action()
 
-if st.sidebar.button("About"):
+if st.sidebar.markdown("[About](#)"):
     about_action()
