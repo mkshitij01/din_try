@@ -20,5 +20,5 @@ with st.sidebar:
         ]),
     ], format_func='title', open_all=True)
     
-if sac.menuItem == 'home':
-    st.write('working')
+if sac.MenuItem == 'home':
+    st.write('yay')
