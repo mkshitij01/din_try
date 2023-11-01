@@ -18,7 +18,8 @@ with st.sidebar:
         ]),
     ], format_func='title', open_all=True)
 
-st.write(Item_Menu)
+st.write(f'The selected button label is: {Item_Menu}')
+
 if Item_menu == 'home':
     st.write('yay')
 if sac.menu(sac.MenuItem) == 'home':
