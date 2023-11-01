@@ -1,31 +1,21 @@
 import streamlit as st
 
-st.sidebar.title("Sidebar")
+# Create a sidebar navigation bar
+st.sidebar.title("Sidebar Navigation")
 
-# Create a list of sidebar options
-options = [
-    "Home",
-    "Setting",
-    "Rename",
-    "Edit",
-]
+# First-level buttons
+if st.sidebar.button("Section 1"):
+    st.write("You are in Section 1")
+if st.sidebar.button("Section 2"):
+    st.write("You are in Section 2")
 
-# Create a dictionary to specify which options have sub-options
-sub_options = {
-    "Setting": ["Rename", "Edit"],
-}
+# Second-level buttons with indentation
+with st.sidebar:
+    st.write("   ")  # Add some padding for indentation
+    if st.button("Subsection 1"):
+        st.write("You are in Subsection 1")
 
-# Create a dictionary to specify the parent option for each sub-option
-parent_option = {
-    "Rename": "Setting",
-    "Edit": "Setting",
-}
-
-selected_option = st.sidebar.selectbox("Select an option", options)
-
-# If the selected option has sub-options, display them as a nested list
-if selected_option in sub_options:
-    st.sidebar.markdown("Options:")
-    for option in options:
-        if parent_option.get(option) == selected_option:
-            st.sidebar.write(f"{option}")
+with st.sidebar:
+    st.write("   ")  # Add some padding for indentation
+    if st.button("Subsection 2"):
+        st.write("You are in Subsection 2")
