@@ -4,14 +4,10 @@ from files import Home
 
 with st.sidebar:
     sac.menu([
-        sac.MenuItem('home', icon='house-fill', Home.app(),
+        sac.MenuItem('home', icon='house-fill', Home.app()),
         sac.MenuItem('products', icon='box-fill', children=[
             sac.MenuItem('apple', icon='apple', tag=sac.Tag('USA', color='green', bordered=False)),
-            sac.MenuItem('other', icon='git', children=[
-                sac.MenuItem('google', icon='google'),
-                sac.MenuItem('gitlab', icon='gitlab'),
-                sac.MenuItem('wechat' * 5, icon='wechat'),
-            ]),
+            sac.MenuItem('other', icon='git')
         ]),
         sac.MenuItem('disabled', icon='send', disabled=True),
         sac.MenuItem(type='divider'),
