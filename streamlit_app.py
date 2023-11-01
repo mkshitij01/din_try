@@ -1,30 +1,19 @@
-'''
 import streamlit as st
-from streamlit_option_menu import option_menu
 
-with st.sidebar:
-    selected = option_menu("Main Menu", ["Home", 'Settings'], 
-        icons=['house', 'gear'], menu_icon="cast", default_index=1)
-    selected
-'''
-import streamlit as st
-from streamlit_option_menu import option_menu
+# Define the sidebar layout
+st.sidebar.header('Navigation')
+navigation = st.sidebar.radio("Go to", ["Section 1", "Section 2"])
 
-def home_button():
-    st.write("Home button pressed")
-    # Add your code for the Home button action here
+# Create a dictionary to map the sections to their content
+sections = {
+    "Section 1": "This is the content of Section 1. You can put any Streamlit elements here.",
+    "Section 2": "This is the content of Section 2. You can put different content here.",
+}
 
-def settings_button(selected_sub_option):
-    st.write(f"Settings button pressed with sub-option: {selected_sub_option}")
-    # Add your code for the selected sub-option action here
+# Display the content based on the selected section
+if navigation in sections:
+    st.write(sections[navigation])
+else:
+    st.write("Welcome to the Streamlit multi-layer side navigation bar. Select a section from the sidebar.")
 
-with st.sidebar:
-    selected = option_menu("Main Menu", ["Home", 'Settings'], 
-                           icons=['house', 'gear'], menu_icon="cast", default_index=1)
-
-    if selected == 'Settings':
-        sub_option = st.selectbox("Sub-options", ["Rename", "Save"])
-        settings_button(sub_option)
-
-    if st.button("Home"):
-        home_button()
+# Optionally, you can add more sections and content by extending the 'sections' dictionary.
