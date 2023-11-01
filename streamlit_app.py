@@ -11,7 +11,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 with st.sidebar:
-    selected = option_menu("Menu", ["Home", option_menu('Settings', ['link1', 'link2']), 
+    selected = option_menu("Menu", ["Home", option_menu('Settings', ['link1', 'link2'])]
         icons=['house', 'gear'], default_index=0)
 
 if selected == "Home":
