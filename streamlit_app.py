@@ -1,7 +1,9 @@
 import streamlit as st
 import streamlit_antd_components as sac
 
-side = sac.menu([
+st.set_page_config(layout="wide")
+
+sidebar = sac.menu([
     sac.MenuItem('home', icon='house-fill'),
     sac.MenuItem('products', icon='box-fill', children=[
         sac.MenuItem('apple', icon='apple', tag=sac.Tag('USA', color='green', bordered=False)),
@@ -18,4 +20,9 @@ side = sac.menu([
         sac.MenuItem('bootstrap-icon', icon='bootstrap', href='https://icons.getbootstrap.com/'),
     ]),
 ], format_func='title', open_all=True)
-st.sidebar(side)
+
+# Use the st.sidebar to display the sidebar
+st.sidebar.write(sidebar)
+
+# You can place the main content in the main area
+st.write("Main Content")
