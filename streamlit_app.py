@@ -10,20 +10,11 @@ with st.sidebar:
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-def home_button():
-    st.write("Home button pressed")
-    # Add your code for the Home button action here
-
-def settings_button():
-    st.write("Settings button pressed")
-    # Add your code for the Settings button action here
-
 with st.sidebar:
-    selected = option_menu("Main Menu", ["Home", 'Settings'], 
-                           icons=['house', 'gear'], menu_icon="cast", default_index=1)
+    selected = option_menu("Menu", ["Home", 'Settings'], 
+        icons=['house', 'gear'], default_index=0)
 
-    if st.button("Home"):
-        home_button()
-
-    if st.button("Settings"):
-        settings_button()
+if selected == "Home":
+    st.write("home is where the heart is")
+else:
+    st.write("settings is my bettings")
