@@ -1,7 +1,7 @@
 import streamlit as st
 import streamlit_antd_components as sac
 
-sac.menu([
+side = sac.menu([
     sac.MenuItem('home', icon='house-fill'),
     sac.MenuItem('products', icon='box-fill', children=[
         sac.MenuItem('apple', icon='apple', tag=sac.Tag('USA', color='green', bordered=False)),
@@ -18,3 +18,4 @@ sac.menu([
         sac.MenuItem('bootstrap-icon', icon='bootstrap', href='https://icons.getbootstrap.com/'),
     ]),
 ], format_func='title', open_all=True)
+st.sidebar(side)
