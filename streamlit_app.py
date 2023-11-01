@@ -1,27 +1,20 @@
 import streamlit as st
+import streamlit_antd_components as sac
 
-# Define functions for each link action
-def home_action():
-    st.write("You clicked on Home!")
-
-def edit_action():
-    st.write("You clicked on Edit!")
-
-def rename_action():
-    st.write("You clicked on Rename!")
-
-def about_action():
-    st.write("You clicked on About!")
-
-# Create clickable text links in the sidebar
-if st.sidebar.markdown("[Home](#)"):
-    home_action()
-
-if st.sidebar.markdown("[Settings](#)"):
-    if st.sidebar.markdown("&nbsp;&nbsp;&nbsp;[Edit](#)"):
-        edit_action()
-    if st.sidebar.markdown("&nbsp;&nbsp;&nbsp;[Rename](#)"):
-        rename_action()
-
-if st.sidebar.markdown("[About](#)"):
-    about_action()
+sac.menu([
+    sac.MenuItem('home', icon='house-fill'),
+    sac.MenuItem('products', icon='box-fill', children=[
+        sac.MenuItem('apple', icon='apple', tag=sac.Tag('USA', color='green', bordered=False)),
+        sac.MenuItem('other', icon='git', children=[
+            sac.MenuItem('google', icon='google'),
+            sac.MenuItem('gitlab', icon='gitlab'),
+            sac.MenuItem('wechat' * 5, icon='wechat'),
+        ]),
+    ]),
+    sac.MenuItem('disabled', icon='send', disabled=True),
+    sac.MenuItem(type='divider'),
+    sac.MenuItem('reference', type='group', children=[
+        sac.MenuItem('antd-menu', icon='heart-fill', href='https://ant.design/components/menu#menu'),
+        sac.MenuItem('bootstrap-icon', icon='bootstrap', href='https://icons.getbootstrap.com/'),
+    ]),
+], format_func='title', open_all=True)
