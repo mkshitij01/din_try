@@ -23,7 +23,7 @@ for text, link in links.items():
     st.sidebar.markdown(f"[{text}]({link})")
 
 # Display the dropdown
-with st.sidebar.beta_expander("Dropdown"):
+with st.sidebar.expander("Dropdown"):
     for text, link in dropdown_links.items():
         st.sidebar.markdown(f"[{text}]({link})")
 
