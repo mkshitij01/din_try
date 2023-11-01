@@ -1,20 +1,32 @@
 import streamlit as st
 
-# Define a custom component for the sidebar with dropdown
-def sidebar_with_dropdown():
-    st.sidebar.markdown("[Home](#)")
-    st.sidebar.markdown("[Link1](#)")
-    st.sidebar.markdown("[Link2](#)")
+# Create a sidebar
+st.sidebar.title("Sidebar")
 
-    with st.sidebar.beta_expander("Drop1"):
-        st.sidebar.markdown("[Link3](#)")
-        st.sidebar.markdown("[Link4](#)")
+# Define the links and dropdowns
+links = {
+    "About": "#about",
+    "Services": "#services",
+    "Clients": "#clients",
+    "Contact": "#contact",
+}
 
-    st.sidebar.markdown("[Link4](#)")
+# Dropdown for "Dropdown"
+dropdown_links = {
+    "Link 1": "#link1",
+    "Link 2": "#link2",
+    "Link 3": "#link3",
+}
 
-    with st.sidebar.beta_expander("Drop2"):
-        st.sidebar.markdown("[Link5](#)")
-        st.sidebar.markdown("[Link6](#)")
+# Display the links
+for text, link in links.items():
+    st.sidebar.markdown(f"[{text}]({link})")
 
-# Use the custom component
-sidebar_with_dropdown()
+# Display the dropdown
+with st.sidebar.beta_expander("Dropdown"):
+    for text, link in dropdown_links.items():
+        st.sidebar.markdown(f"[{text}]({link})")
+
+# Main content
+st.title("Main Content")
+st.write("This is the main content area.")
