@@ -1,37 +1,20 @@
 import streamlit as st
 
-# Create a sidebar navigation bar
+# Sidebar navigation items
+sidebar_items = {
+    "Level 1 Item 1": ["Level 2 Item 1", "Level 2 Item 2"],
+    "Level 1 Item 2": [],  # Empty list for level 2
+}
+
+# Sidebar title
 st.sidebar.title("Sidebar Navigation")
 
-# Define the CSS for styling the buttons
-button_css = "
-<style>
-.stButton {
-    width: 100%;
-    text-align: left;
-    padding-left: 30px;
-    margin-bottom: 10px;
-}
+# Level 1 selection
+level1 = st.sidebar.selectbox("Select Level 1", list(sidebar_items.keys()))
 
-.stButton.subsection {
-    margin-left: 20px;
-}
-</style>
-"
+# Level 2 selection (if level 1 item has sub-items)
+level2 = st.sidebar.selectbox("Select Level 2", sidebar_items.get(level1, []))
 
-st.sidebar.markdown(button_css, unsafe_allow_html=True)
-
-# First-level buttons
-if st.sidebar.button("Section 1"):
-    st.write("You are in Section 1")
-if st.sidebar.button("Section 2"):
-    st.write("You are in Section 2")
-
-# Second-level buttons with increased margin for indentation
-with st.sidebar:
-    if st.button("Subsection 1", key="subsection1", class="subsection"):
-        st.write("You are in Subsection 1")
-
-with st.sidebar:
-    if st.button("Subsection 2", key="subsection2", class="subsection"):
-        st.write("You are in Subsection 2")
+# Content based on selections
+st.write(f"Selected Level 1: {level1}")
+st.write(f"Selected Level 2: {level2}")
