@@ -1,9 +1,10 @@
 import streamlit as st
 import streamlit_antd_components as sac
+from files import Home
 
 with st.sidebar:
     sac.menu([
-        sac.MenuItem('home', icon='house-fill'),
+        sac.MenuItem('home', icon='house-fill', Home.app(),
         sac.MenuItem('products', icon='box-fill', children=[
             sac.MenuItem('apple', icon='apple', tag=sac.Tag('USA', color='green', bordered=False)),
             sac.MenuItem('other', icon='git', children=[
