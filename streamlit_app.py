@@ -1,14 +1,31 @@
 import streamlit as st
 
-# Create a sidebar
 st.sidebar.title("Sidebar")
 
-# Dropdown menu for Section 1
-section_1 = st.sidebar.selectbox("Section 1", ["Option 1", "Option 2", "Option 3"])
+# Create a list of sidebar options
+options = [
+    "Home",
+    "Setting",
+    "Rename",
+    "Edit",
+]
 
-# Dropdown menu for Section 2
-section_2 = st.sidebar.selectbox("Section 2", ["Option A", "Option B", "Option C"])
+# Create a dictionary to specify which options have sub-options
+sub_options = {
+    "Setting": ["Rename", "Edit"],
+}
 
-# Display content based on the selected dropdown options
-st.write("Selected Section 1 option:", section_1)
-st.write("Selected Section 2 option:", section_2)
+# Create a dictionary to specify the parent option for each sub-option
+parent_option = {
+    "Rename": "Setting",
+    "Edit": "Setting",
+}
+
+selected_option = st.sidebar.selectbox("Select an option", options)
+
+# If the selected option has sub-options, display them as a nested list
+if selected_option in sub_options:
+    st.sidebar.markdown("Options:")
+    for option in options:
+        if parent_option.get(option) == selected_option:
+            st.sidebar.write(f"{option}")
