@@ -1,19 +1,14 @@
 import streamlit as st
 
-# Define the sidebar layout
-st.sidebar.header('Navigation')
-navigation = st.sidebar.radio("Go to", ["Section 1", "Section 2"])
+# Create a sidebar
+st.sidebar.title("Sidebar")
 
-# Create a dictionary to map the sections to their content
-sections = {
-    "Section 1": "This is the content of Section 1. You can put any Streamlit elements here.",
-    "Section 2": "This is the content of Section 2. You can put different content here.",
-}
+# Dropdown menu for Section 1
+section_1 = st.sidebar.selectbox("Section 1", ["Option 1", "Option 2", "Option 3"])
 
-# Display the content based on the selected section
-if navigation in sections:
-    st.write(sections[navigation])
-else:
-    st.write("Welcome to the Streamlit multi-layer side navigation bar. Select a section from the sidebar.")
+# Dropdown menu for Section 2
+section_2 = st.sidebar.selectbox("Section 2", ["Option A", "Option B", "Option C"])
 
-# Optionally, you can add more sections and content by extending the 'sections' dictionary.
+# Display content based on the selected dropdown options
+st.write("Selected Section 1 option:", section_1)
+st.write("Selected Section 2 option:", section_2)
