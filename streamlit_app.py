@@ -8,8 +8,8 @@ with st.sidebar:
         sac.MenuItem('Home', icon='house-fill'),
         sac.MenuItem('link1', icon='send'),
         sac.MenuItem('link2', icon='send',),
-        sac.MenuItem('Admin', icon='admin', children=[
-            sac.MenuItem('Mappings', icon='apple', children=[
+        sac.MenuItem('Admin', icon='box-fill', children=[
+            sac.MenuItem('Mappings', icon='box-fill', children=[
                 sac.MenuItem('Create', icon='git'),
                 sac.MenuItem('Edit', icon='git'),
             ]),
