@@ -18,5 +18,5 @@ with st.sidebar:
 
 if Item_menu == 'home':
     Home.app()
-elif Item_menu == 'apple':
+elif Item_menu == 'link1':
     st.write('yayaya')
