@@ -18,8 +18,9 @@ with st.sidebar:
         sac.MenuItem(type='divider'),
         sac.MenuItem('reference', type='group', children=[
             sac.MenuItem('antd-menu', icon='heart-fill', href='https://ant.design/components/menu#menu'),
-            sac.MenuItem('bootstrap-icon', icon='bootstrap', href='https://icons.getbootstrap.com/'),'''
+            sac.MenuItem('bootstrap-icon', icon='bootstrap', href='https://icons.getbootstrap.com/'),
         ]),
+        '''
     ], format_func='title', open_all=True)
 
 if Item_menu == 'home':
