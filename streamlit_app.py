@@ -16,7 +16,7 @@ with st.sidebar:
         ]),
     ], format_func='title', open_all=True)
 
-if Item_menu == 'home':
+if Item_menu == 'Home':
     Home.app()
 elif Item_menu == 'link1':
     st.write('yayaya')
