@@ -11,12 +11,12 @@ def app():
 
     with col1:
         st.header('Bar Chart')
-        chart_data = pd.DataFrame(np.random.randn(10, 3), columns=["a", "b", "c"])
+        chart_data = pd.DataFrame(np.random.randn(5, 3), columns=["a", "b", "c"])
         st.bar_chart(chart_data)
 
     with col2:
         st.header('Line Chart')
-        chart_data = pd.DataFrame(np.random.randn(10, 3), columns=["a", "b", "c"])
+        chart_data = pd.DataFrame(np.random.randn(5, 3), columns=["a", "b", "c"])
         st.line_chart(chart_data)
 
     st.header('Another Bar Chart')
