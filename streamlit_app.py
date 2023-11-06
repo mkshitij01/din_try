@@ -14,7 +14,7 @@ with st.sidebar:
                 sac.MenuItem('Edit', icon='git'),
             ]),
         ]),
-    ], format_func='title', open_all=True)
+    ], format_func='title', indent-'15', open_all=True)
 
 if Item_menu == 'Home':
     Home.app()
