@@ -15,5 +15,4 @@ def app():
         sac.TreeItem('item8'),
         sac.TreeItem('item9'),
         sac.TreeItem('item10'),
-        ]),
     ], label='label', index=0, format_func='title', checkbox=True, show_line=False, checkbox_strict=True, return_index=True)
