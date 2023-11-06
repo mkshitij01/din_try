@@ -1,7 +1,7 @@
 import streamlit as st
 import streamlit_antd_components as sac
 import Home
-import schedules
+import SSchedules
 
 with st.sidebar:
     
@@ -20,6 +20,6 @@ with st.sidebar:
 if Item_menu == 'Home':
     Home.app()
 elif Item_menu == 'Schedules':
-    schedules.app()
+    SSchedules.app()
 elif Item_menu == 'link2':
     st.write('Link 2 was clicked!')
