@@ -23,4 +23,4 @@ elif Item_menu == 'Schedules':
     SSchedules.app()
 elif Item_menu == 'link2':
     st.write('Link 2 was clicked!')
-    st. write("<a href='#' id='my-link'>Click me</a>", unsafe_allow_html=True)
+    st. write("<a href='https://www.google.com/' id='my-link'>Click me</a>", unsafe_allow_html=True)
