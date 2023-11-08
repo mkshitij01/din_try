@@ -21,7 +21,7 @@ def app():
 
     df = pd.DataFrame(
         [
-           {"command": "st.selectbox", "rating": 4, "is_widget": True},
+           {"command": st.write("<a href='https://www.google.com/'id='my-link'>Click me</a>", unsafe_allow_html=True), "rating": 4, "is_widget": True},
            {"command": "st.balloons", "rating": 5, "is_widget": False},
            {"command": "st.time_input", "rating": 3, "is_widget": True},
        ]
